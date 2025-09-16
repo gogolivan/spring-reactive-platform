@@ -1,0 +1,15 @@
+= Gateway
+
+Reactive Gateway Service
+
+
+== References
+- https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway.html[Reactive Gateway]
+- https://docs.spring.io/spring-boot/reference/web/spring-security.html#web.security.oauth2.server[OAuth2 Resource Server]
+- https://docs.spring.io/spring-boot/reference/web/spring-security.html[Spring Security]
+- https://docs.spring.io/spring-cloud-config/reference/server.html[Config Server]
+- https://docs.spring.io/spring-cloud-vault/reference/[Vault Configuration]
+- https://docs.spring.io/spring-boot/3.5.5/specification/configuration-metadata/annotation-processor.html[Spring Configuration Processor]
+- https://java.testcontainers.org/[Testcontainers]
+* https://docs.spring.io/spring-boot/reference/testing/testcontainers.html#testing.testcontainers[Spring Boot Testcontainers support]
+* https://java.testcontainers.org/modules/vault/[Testcontainers Vault Module Reference Guide]

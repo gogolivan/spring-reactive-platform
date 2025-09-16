@@ -1,0 +1,22 @@
+= Spring Reactive Platform
+
+_Maven_ multi-module *Reactive* _Spring Boot_ project.
+
+== Topics
+_spring_, _reactive_, _maven_, _graphql_, _grpc_
+
+== Requirements
+- https://www.docker.com/[Docker] or https://podman.io/[Podman]
+
+== Modules
+
+=== link:spring-reactive-platform-dependencies/README.adoc[Spring Reactive Platform Dependencies]
+Centralized dependency versions management.
+
+=== link:spring-reactive-platform-spring-boot-starter/README.adoc[Spring Reactive Platform Spring Boot Starter]
+Provides _Spring_ default configurations.
+
+
+== References
+
+- https://maven.apache.org/guides/index.html[Official Apache Maven documentation]

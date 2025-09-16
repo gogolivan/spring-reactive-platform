@@ -1,0 +1,88 @@
+= File Store
+Reactive File Store Service
+
+== GraalVM Native Support
+
+This project has been configured to let you generate either a lightweight container or a native executable.
+It is also possible to run your tests in a native image.
+
+=== Lightweight Container with Cloud Native Buildpacks
+If you're already familiar with Spring Boot container images support, this is the easiest way to get started.
+Docker should be installed and configured on your machine prior to creating the image.
+
+To create the image, run the following goal:
+
+[source]
+----
+./mvnw spring-boot:build-image -Pnative
+----
+
+Then, you can run the app like any other container:
+
+[source]
+----
+docker run --rm filestore:0.0.1-SNAPSHOT
+----
+
+=== Executable with Native Build Tools
+Use this option if you want to explore more options such as running your tests in a native image.
+The GraalVM `native-image` compiler should be installed and configured on your machine.
+
+To create the executable, run the following goal:
+
+[source]
+----
+./mvnw native:compile -Pnative
+----
+
+Then, you can run the app as follows:
+
+[source]
+----
+target/filestore
+----
+
+You can also run your existing tests suite in a native image.
+This is an efficient way to validate the compatibility of your application.
+
+To run your existing tests in a native image, run the following goal:
+
+[source]
+----
+./mvnw test -PnativeTest
+----
+
+== Testcontainers support
+
+This project uses [Testcontainers at development time](https://docs.spring.io/spring-boot/reference/features/dev-services.html#features.dev-services.testcontainers).
+
+Testcontainers has been configured to use the following Docker images:
+
+* [`mongo:latest`](https://hub.docker.com/_/mongo)
+* [`postgres:latest`](https://hub.docker.com/_/postgres)
+* [`redis:latest`](https://hub.docker.com/_/redis)
+* [`apache/kafka-native:latest`](https://hub.docker.com/r/apache/kafka-native)
+
+
+== References
+
+- https://docs.spring.io/spring-boot/reference/web/reactive.html[Spring Reactive Web]
+- https://docs.spring.io/spring-boot/reference/web/spring-security.html[Spring Security]
+- https://docs.spring.io/spring-boot/reference/web/spring-security.html#web.security.oauth2.server[Spring OAuth2 Resource Server]
+- https://docs.spring.io/spring-boot/reference/data/sql.html#data.sql.r2dbc[Spring Data R2DBC]
+- https://docs.spring.io/spring-boot/reference/data/nosql.html#data.nosql.mongodb[Spring Data Reactive MongoDB]
+- https://docs.spring.io/spring-boot/reference/data/nosql.html#data.nosql.redis[Spring Data Reactive Redis]
+- https://docs.spring.io/spring-cloud-config/reference/client.html[Config Client]
+- https://docs.spring.io/spring-boot/specification/configuration-metadata/annotation-processor.html[Spring Configuration Processor]
+- https://docs.spring.io/spring-boot/maven-plugin/build-image.html[Create an OCI image]
+- https://docs.spring.io/spring-boot/reference/packaging/native-image/introducing-graalvm-native-images.html[GraalVM Native Image Support]
+- https://docs.spring.io/spring-boot/how-to/data-initialization.html#howto.data-initialization.migration-tool.flyway[Flyway Migration]
+- https://docs.spring.io/spring-boot/reference/messaging/kafka.html[Spring for Apache Kafka]
+- https://docs.spring.io/spring-kafka/reference/streams.html[Apache Kafka Streams Support]
+- https://docs.spring.io/spring-cloud-stream/reference/kafka/kafka-streams-binder/usage.html[Apache Kafka Streams Binding Capabilities of Spring Cloud Stream]
+- https://java.testcontainers.org/[Testcontainers]
+* https://docs.spring.io/spring-boot/reference/testing/testcontainers.html#testing.testcontainers[Spring Boot Testcontainers support]
+* https://java.testcontainers.org/modules/databases/mongodb/[Testcontainers MongoDB Module Reference Guide]
+* https://java.testcontainers.org/modules/databases/r2dbc/[Testcontainers R2DBC support Reference Guide]
+* https://java.testcontainers.org/modules/databases/postgres/[Testcontainers Postgres Module Reference Guide]
+* https://java.testcontainers.org/modules/kafka/[Testcontainers Kafka Modules Reference Guide]
